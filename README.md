@@ -4,15 +4,11 @@
 
 # 功能列表
 
-[x] 自动登录，获取登录经验5点 
-
-[x] 哔哩哔哩漫画每日自动签到 
-
-[x] 每日自动分享1个视频 5exp 
-
-[ ] 每日自动模拟观看1个视频 5exp 
-
-[ ] 每日从热门视频中选取5个进行投币 50exp  待完成
+* [x] 自动登录，获取登录经验5点 
+* [x] 哔哩哔哩漫画每日自动签到 
+* [x] 每日自动分享1个视频 5exp 
+* [ ] 每日自动模拟观看1个视频 5exp 
+* [x] 每日从热门视频中选取5个进行投币 50exp
 
 ·····
 
@@ -34,7 +30,14 @@
 
 ![图示](docs/IMG/20201012001307.png)
 
-本项目部分API参考了[happy888888/BiliExp](https://github.com/happy888888/BiliExp) 。
+# API参考列表
+
+- [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect)
+- [happy888888/BiliExp](https://github.com/happy888888/BiliExp)
+
+
+
+
 
 
 
