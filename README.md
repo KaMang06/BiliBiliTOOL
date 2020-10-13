@@ -50,9 +50,7 @@ BILIBILI-HELPER
 ![图示](docs/IMG/20201013134409.png)
 
 
-## 如何获取Bilibili cookies
-
-<span id="jump">如何获取Bilibili cookies</span>
+## <span id="jump">如何获取Bilibili cookies</span>
 
 1. 浏览器打开并登录[bilibili网站](https://www.bilibili.com/)
 2. 按F12打开 “开发者工具” 找到应用程序/Application -> 存储-> Cookies
@@ -60,9 +58,9 @@ BILIBILI-HELPER
 
 ![图示](docs/IMG/20201012001307.png)
 
-## 自定义投币
+## <span id="jump1">自定义投币</span>
+
 **配置文件位于`src/main/resources/config.json`**
-<span id="jump1">查看如何自定义每日投币数量</span>
 
 参数示意
 | Key           | Value | 说明                           |
