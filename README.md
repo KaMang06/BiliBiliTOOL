@@ -1,6 +1,6 @@
 # BILIBILI-HELPER
 
-这是一个利用GitHub Action实现哔哩哔哩签到，获取每日经验的小工具，除此之外，也可以部署到个人的服务器上，目前正在快速开发迭代中。
+这是一个利用GitHub Action实现哔哩哔哩签到，通过简单的操作便可获取每日65点经验的小工具，也可以部署到个人的服务器上，目前正在快速开发迭代中，快来和我一起成为Lv6吧~~~~。
 
 # 功能列表
 
@@ -22,7 +22,18 @@
 | DEDEUSERID | 从浏览器缓存中获取 |
 | SESSDATA   | 从浏览器缓存中获取 |
 
-## 如何获取上述cookies
+[查看如何获取哔哩哔哩Cookies](#jump)
+
+![图示](docs/IMG/20201013134942.png)
+
+# 查看运行日志 
+*通过`INFO`标签快速过滤日志*  
+![图示](docs/IMG/20201013134409.png)
+
+
+## 如何获取Bilibili cookies
+
+<span id="jump">如何获取Bilibili cookies</span>
 
 1. 浏览器打开并登录[bilibili网站](https://www.bilibili.com/)
 2. 按F12打开 “开发者工具” 找到应用程序/Application -> 存储-> Cookies
