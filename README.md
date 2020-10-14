@@ -29,8 +29,8 @@ BILIBILI-HELPER
 ·····
 
 # 开始使用
-1. fork本项目
-2. 点击项目 Seeting->Secrets->New Secrets 添加以下三个环境变量。
+1. **fork本项目**
+2. **点击项目 Seeting->Secrets->New Secrets 添加以下三个环境变量。**
 
 | Name       | Value              |
 | ---------- | ------------------ |
@@ -44,8 +44,9 @@ BILIBILI-HELPER
 
 ![图示](docs/IMG/20201013210000.png)
 
-3. 手动开GitHub Action服务
-Github actions默认处于禁止状态，请手动开启Actions. 之后每天10点半会运行一次。
+3. **手动开GitHub Action服务**
+   
+Github Actions默认处于禁止状态，请手动开启Actions. 之后每天10点半会运行一次。
 
 ![图示](docs/IMG/openActions.png)
 
