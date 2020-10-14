@@ -29,9 +29,12 @@ BILIBILI-HELPER
 ·····
 
 # 开始使用
-1. **fork本项目**
-2. **点击项目 Seeting->Secrets->New Secrets 添加以下三个环境变量。**
+1. **fork本项目，功能正在逐步增加中，要是能顺手点个Star就更好了**
+2. **手动开GitHub Action服务**
+Github Actions默认处于禁止状态，请手动开启Actions. 之后每天10点半会运行一次。
+![图示](docs/IMG/openActions.png)
 
+3. **点击项目 Seeting->Secrets->New Secrets 添加以下三个环境变量。**
 | Name       | Value              |
 | ---------- | ------------------ |
 | BILI_JCT   | 从浏览器缓存中获取 |
@@ -43,12 +46,6 @@ BILIBILI-HELPER
 *如果收到了GitHub Action的错误邮件，请检查Cookies是不是失效了，用户在浏览器中主动退出B站账号，会导致`BILI_JCT`和`DEDEUSERID`失效*
 
 ![图示](docs/IMG/20201013210000.png)
-
-3. **手动开GitHub Action服务**
-   
-Github Actions默认处于禁止状态，请手动开启Actions. 之后每天10点半会运行一次。
-
-![图示](docs/IMG/openActions.png)
 
 
 ## 查看运行日志 
