@@ -11,9 +11,25 @@ BILIBILI-HELPER
  
 </div>
 
+# 目录
+- [目录](#目录)
+- [工具简介](#工具简介)
+- [功能列表](#功能列表)
+- [开始使用](#开始使用)
+  - [使用前准备](#使用前准备)
+  - [查看运行日志](#查看运行日志)
+  - [<span id="jump">如何获取Bilibili cookies</span>](#如何获取bilibili-cookies)
+  - [<span id="jump1">自定义投币</span>](#自定义投币)
+- [快速更新](#快速更新)
+  - [关于项目更新频率](#关于项目更新频率)
+  - [快速拉取最新代码](#快速拉取最新代码)
+- [API参考列表](#api参考列表)
+[查看如何自定义每日投币数量](#jump1)
+
 # 工具简介 
 
 这是一个利用GitHub Action实现哔哩哔哩签到，简单配置便可自动获取每日65点经验的小工具，也可以部署到个人的服务器上，目前正在快速开发迭代中，快来和我一起成为Lv6吧~~~~。
+
 
 # 功能列表
 * [x] 每天上午10点30自动执行。 
@@ -24,11 +40,10 @@ BILIBILI-HELPER
 * [x] 每日从热门视频中选取5个进行投币 50exp
 * [x] 投币支持下次一定啦，可自定义每日投币数量。
 
-[查看如何自定义每日投币数量](#jump1)
-
 ·····
 
 # 开始使用
+## 使用前准备
 1. **fork本项目，功能正在逐步增加中，要是能顺手点个Star就更好了**
 2. **手动开GitHub Action服务**
    
@@ -73,9 +88,48 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天10�
 | ------------- | ----- | ------------------------------ |
 | numberOfCoins | 0到5  | 每日投币数量                   |
 | select_like   | 1，0  | 1：投币时点赞，0：投币时不点赞 |
-| watch_share   | 1，0  | 1：观看时分享，0：观看不分享 |
+| watch_share   | 1，0  | 1：观看时分享，0：观看不分享   |
 
 *投币数量如果随便写的话，可能会导致你破产。。。。（代码做了处理，投币最多5个）*
+
+
+# 快速更新
+
+## 关于项目更新频率
+目前处于快速迭代阶段，建议通过以下方式从本仓库拉取最新代码。
+
+## 快速拉取最新代码
+
+0. 通过`git remote -v`查看是否有源头仓库的别名和地址。
+
+例如这里origin就是你自己的仓库，upstream是你fork的源头仓库。
+```bash
+$ git remote -v
+origin  https://github.com/JunzhouLiu/cxmooc-tools.git (fetch)
+origin  https://github.com/JunzhouLiu/cxmooc-tools.git (push)
+upstream        https://github.com/CodFrm/cxmooc-tools.git (fetch)
+upstream        https://github.com/CodFrm/cxmooc-tools.git (push)
+
+```
+
+1. fork仓库后，将你的仓库拉到本地，如果没有源头仓库，则添加源头仓库
+```bash
+git remote add upstream https://github.com/JunzhouLiu/BILIBILI-HELPER.git
+```
+
+2. 更新上游仓库main分支的代码（pull操作实际上是 `fetch+merge`）
+
+```bash
+git pull upstream main
+```
+
+3. 将从源头仓库更新后的代码推送到你自己的github仓库
+
+```bash
+git push origin main 
+```
+4. 这样你就能快速的从我的仓库拉取最新的代码，并更新到你自己的仓库里了。自定义配置的同学，要注意`config.json` 不要被我的文件覆盖了。 
+
 
 # API参考列表
 
