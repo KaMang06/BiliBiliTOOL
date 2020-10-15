@@ -119,7 +119,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 0 16 * * fri
-    # cron表达式,每周五16点执行一次，可按照需求自定义。  
+    # cron表达式,每周五16点执行一次，时区为Asia/Shanghai可按照需求自定义。  
 
 jobs:
   merge:
@@ -153,6 +153,7 @@ jobs:
     - name: Push Commits
       env:
         DOWNSTREAM_BRANCH: main
+        TZ: Asia/Shanghai
       run: git push origin $DOWNSTREAM_BRANCH
 ```
 
