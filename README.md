@@ -19,7 +19,7 @@ BILIBILI-HELPER
 **仓库地址:[JunzhouLiu/BILIBILI-HELPER](https://github.com/JunzhouLiu/BILIBILI-HELPER)**
 
 ## 功能列表
-* [x] 每天上午10点30自动自动登录。
+* [x] 每天上午8点30自动开始任务。
 * [x] 哔哩哔哩漫画每日自动签到 。
 * [x] 每日自动从热门视频中随机观看1个视频，并分享 10经验 
 * [x] 每日从热门视频中选取5个进行智能投币 *【如果投币不能获得经验，默认不投币】*
