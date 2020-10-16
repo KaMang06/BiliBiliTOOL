@@ -27,9 +27,10 @@ BILIBILI-HELPER
 * [x] 大会员月底使用快到期的B币券，给自己充电，一点也不会浪费哦，默认开启。*【可配置】*
 * [x] 大会员月初1号自动领取每月5张B币券和福利。
 
-[快速使用](#使用前准备)
-[点击查看如何自定义上述功能](#自定义功能)
 ......
+
+[点击快速开始使用](#快速开始使用)
+
 
 # 目录
 - [工具简介](#工具简介)
@@ -69,13 +70,15 @@ BILIBILI-HELPER
 
 4. **手动开GitHub Action服务**
    
-Github Actions默认处于禁止状态，请手动开启Actions. 之后每天10点半会运行一次。
+Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8点30会运行一次。
+
+![图示](docs/IMG/openActions.png)
 
 本工具的Actions自动构建配置了缓存，平均运行时间在`20s`左右。~~`Github Actions`每月的免费额度有2000分钟。所以本工具执行一个月（30次）的定时任务，大约会使用12分钟左右的免费额度，不到`0.6%`大家可以放心使用。公开仓库的Actions不计时 嘤嘤嘤~~
 
 *如果收到了GitHub Action的错误邮件，请检查Cookies是不是失效了，用户主动清除浏览器缓存，会导致`BILI_JCT`和`DEDEUSERID`失效*
 
-![图示](docs/IMG/openActions.png)
+
 
 ## 配置自定义功能
 
@@ -120,8 +123,8 @@ name: auto_merge
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 16 * * fri
-    # cron表达式,每周五16点执行一次，时区为Asia/Shanghai可按照需求自定义。  
+    - cron: 0 2 * * fri
+    # cron表达式,每周五10点执行一次，UTC时间，使用北京时间请+8可按照需求自定义。  
 
 jobs:
   merge:
