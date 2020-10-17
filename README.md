@@ -8,7 +8,7 @@ BILIBILI-HELPER
 [![GitHub issues](https://img.shields.io/github/issues/JunzhouLiu/BILIBILI-HELPER?style=flat-square)](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues)
 [![GitHub license](https://img.shields.io/github/license/JunzhouLiu/BILIBILI-HELPER?style=flat-square)](https://github.com/JunzhouLiu/BILIBILI-HELPER/blob/main/LICENSE) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/JunzhouLiu/BILIBILI-HELPER/total?style=flat-square)
- 
+![GitHub contributors](https://img.shields.io/github/contributors/JunzhouLiu/BILIBILI-HELPER?style=flat-square)
 </div>
 
 # 工具简介 
@@ -91,13 +91,13 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 
 参数示意
 
-| Key                | Value         | 说明                                                      |
-| ------------------ | ------------- | --------------------------------------------------------- |
-| numberOfCoins      | [0,5]         | 每日投币数量                                              |
-| selectLike         | [1,0]         | 1：投币时点赞，0：投币时不点赞                            |
-| ~~watchAndShare~~  | ~~[1,0]~~     | ~~1：观看时分享，0：观看不分~~享                          |
-| monthEndAutoCharge | [1,0]         | 1：大会员月底如果有没用完的B币券自动充电，0：关闭月底充电 |
-| devicePlatform     | [ios,android] | 手机端漫画签到时的平台，建议选择你设备的平台              |
+| Key                | Value         | 说明                                                     |
+| ------------------ | ------------- | -------------------------------------------------------- |
+| numberOfCoins      | [0,5]         | 每日投币数量,默认5                                       |
+| selectLike         | [0,1]         | 投币时是否点赞，默认0, 0:否 1:是                         |
+| ~~watchAndShare~~  | ~~[0,1]~~     | ~~观看时是否分享~~                                       |
+| monthEndAutoCharge | [false,true]  | 年度大会员月底是否用B币券给自己充电，默认`true`          |
+| devicePlatform     | [ios,android] | 手机端漫画签到时的平台，建议选择你设备的平台 ，默认`ios` |
 
 *投币数量代码做了处理，如果本日投币不能获得经验了，则不会投币，每天只投能获得经验的硬币。假设你设置每日投币3个，早上7点你自己投了2个硬币，则十点半时，程序只会投1个）*
 
