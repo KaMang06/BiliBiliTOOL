@@ -7,6 +7,7 @@ BILIBILI-HELPER
 [![GitHub forks](https://img.shields.io/github/forks/JunzhouLiu/BILIBILI-HELPER?style=flat-square)](https://github.com/JunzhouLiu/BILIBILI-HELPER/network)
 [![GitHub issues](https://img.shields.io/github/issues/JunzhouLiu/BILIBILI-HELPER?style=flat-square)](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues)
 [![GitHub license](https://img.shields.io/github/license/JunzhouLiu/BILIBILI-HELPER?style=flat-square)](https://github.com/JunzhouLiu/BILIBILI-HELPER/blob/main/LICENSE) 
+![GitHub All Releases](https://img.shields.io/github/downloads/JunzhouLiu/BILIBILI-HELPER/total?style=flat-square)
  
 </div>
 
@@ -36,10 +37,15 @@ BILIBILI-HELPER
 - [工具简介](#工具简介)
   - [功能列表](#功能列表)
 - [目录](#目录)
-- [使用说明](#使用说明)
+- [使用说明(Actions定时任务方式)](#使用说明actions定时任务方式)
   - [快速开始使用](#快速开始使用)
   - [配置自定义功能](#配置自定义功能)
   - [查看运行日志](#查看运行日志)
+- [使用说明(Luinx crontab方式)](#使用说明luinx-crontab方式)
+  - [使用前准备](#使用前准备)
+  - [配置`crontab`命令](#配置crontab命令)
+  - [运行效果](#运行效果)
+- [使用说明(在任何装有Java运行环境的pc上执行)](#使用说明在任何装有java运行环境的pc上执行)
 - [快速更新](#快速更新)
   - [关于项目更新频率](#关于项目更新频率)
   - [使用Github Actions 自动同步源仓库代码](#使用github-actions-自动同步源仓库代码)
@@ -48,7 +54,7 @@ BILIBILI-HELPER
 - [API参考列表](#api参考列表)
 
 
-# 使用说明
+# 使用说明(Actions定时任务方式)
 ## 快速开始使用
 1. **fork本项目，功能正在逐步增加中，要是能顺手点个Star就更好了**
 2. **获取Bilibili Cookies**
@@ -86,12 +92,13 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 
 参数示意
 
-| Key                   | Value | 说明                                                      |
-| --------------------- | ----- | --------------------------------------------------------- |
-| numberOfCoins         | 0到5  | 每日投币数量                                              |
-| selectLike           | 1，0  | 1：投币时点赞，0：投币时不点赞                            |
-| watchAndShare           | 1，0  | 1：观看时分享，0：观看不分享                              |
-| monthEndAutoCharge | 1，0  | 1：大会员月底如果有没用完的B币券自动充电，0：关闭月底充电 |
+| Key                | Value         | 说明                                                      |
+| ------------------ | ------------- | --------------------------------------------------------- |
+| numberOfCoins      | [0,5]         | 每日投币数量                                              |
+| selectLike         | [1,0]         | 1：投币时点赞，0：投币时不点赞                            |
+| ~~watchAndShare~~  | ~~[1,0]~~     | ~~1：观看时分享，0：观看不分~~享                          |
+| monthEndAutoCharge | [1,0]         | 1：大会员月底如果有没用完的B币券自动充电，0：关闭月底充电 |
+| devicePlatform     | [ios,android] | 手机端漫画签到时的平台，建议选择你设备的平台              |
 
 *投币数量代码做了处理，如果本日投币不能获得经验了，则不会投币，每天只投能获得经验的硬币。假设你设置每日投币3个，早上7点你自己投了2个硬币，则十点半时，程序只会投1个）*
 
@@ -103,6 +110,41 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 
 ![图示](docs/IMG/debug1.png)
 ![图示](docs/IMG/debug2.png)
+
+
+# 使用说明(Luinx crontab方式)
+## 使用前准备
+点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，上传至Liunx服务器。
+
+## 配置`crontab`命令
+
+1. `crontab -l`
+```bash
+root@iZuf642f8w148fwdcpq169Z:~# crontab -l
+.......
+# m h  dom mon dow   command
+0 0 1,15 * * /home/./acme.sh-master/acme.sh --renew-all >>/var/log/cron.log 2>&1 &
+0 0 1,15 * * nginx -s reload >>/var/log/cron.log 2>&1 &
+```
+2. `corntab -e`,编辑crontab任务，退出保存即可。后面跟的三个参数为哔哩哔哩Cookies参数。
+```bash
+# m h  dom mon dow   command
+0 0 1,15 * * /home/./acme.sh-master/acme.sh --renew-all >>/var/log/cron.log 2>&1 &
+0 0 1,15 * * nginx -s reload >>/var/log/cron.log 2>&1 &
+java -jar /home/BILIBILI-HELP.jar userId sessData biliJct 
+```
+
+## 运行效果  
+![图示](docs/IMG/liunxImg.png)
+
+
+# 使用说明(在任何装有Java运行环境的pc上执行)
+1. 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本。在Jar包目录打开`Powershell`
+   
+2. 执行`java -jar /home/BILIBILI-HELP.jar userId sessData biliJct `
+
+![图示](docs/IMG/powershell.png)
+
 
 # 快速更新
 
