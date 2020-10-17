@@ -37,15 +37,15 @@ BILIBILI-HELPER
 - [工具简介](#工具简介)
   - [功能列表](#功能列表)
 - [目录](#目录)
-- [使用说明(Actions定时任务方式)](#使用说明actions定时任务方式)
-  - [快速开始使用](#快速开始使用)
-  - [配置自定义功能](#配置自定义功能)
-  - [查看运行日志](#查看运行日志)
-- [使用说明(Luinx crontab方式)](#使用说明luinx-crontab方式)
-  - [使用前准备](#使用前准备)
-  - [配置`crontab`命令](#配置crontab命令)
-  - [运行效果](#运行效果)
-- [使用说明(在任何装有Java运行环境的pc上执行)](#使用说明在任何装有java运行环境的pc上执行)
+- [使用说明](#使用说明)
+  - [一、Actions定时任务（推荐）](#一actions定时任务推荐)
+    - [配置自定义功能](#配置自定义功能)
+    - [查看运行日志](#查看运行日志)
+  - [二、使用Luinx crontab方式](#二使用luinx-crontab方式)
+    - [步骤](#步骤)
+    - [运行效果](#运行效果)
+  - [三、使用Windows10](#三使用windows10)
+    - [步骤](#步骤-1)
 - [快速更新](#快速更新)
   - [关于项目更新频率](#关于项目更新频率)
   - [使用Github Actions 自动同步源仓库代码](#使用github-actions-自动同步源仓库代码)
@@ -54,8 +54,8 @@ BILIBILI-HELPER
 - [API参考列表](#api参考列表)
 
 
-# 使用说明(Actions定时任务方式)
-## 快速开始使用
+# 使用说明
+## 一、Actions定时任务（推荐）
 1. **fork本项目，功能正在逐步增加中，要是能顺手点个Star就更好了**
 2. **获取Bilibili Cookies**
 - 浏览器打开并登录[bilibili网站](https://www.bilibili.com/)
@@ -85,8 +85,7 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 *如果收到了GitHub Action的错误邮件，请检查Cookies是不是失效了，用户主动清除浏览器缓存，会导致`BILI_JCT`和`DEDEUSERID`失效*
 
 
-
-## 配置自定义功能
+### 配置自定义功能
 
 **配置文件位于`src/main/resources/config.json`**
 
@@ -102,7 +101,7 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 
 *投币数量代码做了处理，如果本日投币不能获得经验了，则不会投币，每天只投能获得经验的硬币。假设你设置每日投币3个，早上7点你自己投了2个硬币，则十点半时，程序只会投1个）*
 
-## 查看运行日志 
+### 查看运行日志 
 
 *展开`Build With Maven`通过`DEBUG`标签快速过滤日志，查看运行状态*  
 
@@ -112,11 +111,10 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 ![图示](docs/IMG/debug2.png)
 
 
-# 使用说明(Luinx crontab方式)
-## 使用前准备
-点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，上传至Liunx服务器。
+## 二、使用Luinx crontab方式
 
-## 配置`crontab`命令
+### 步骤
+点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，上传至Liunx服务器。
 
 1. `crontab -l`
 ```bash
@@ -134,12 +132,13 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 java -jar /home/BILIBILI-HELP.jar userId sessData biliJct 
 ```
 
-## 运行效果  
+### 运行效果  
 ![图示](docs/IMG/liunxImg.png)
 
 
-# 使用说明(在任何装有Java运行环境的pc上执行)
-1. 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本。在Jar包目录打开`Powershell`
+## 三、使用Windows10
+### 步骤
+1. 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本。在Jar包目录打开`Powershell` 需要装有Java运行环境
    
 2. 执行`java -jar /home/BILIBILI-HELP.jar userId sessData biliJct `
 
