@@ -68,9 +68,9 @@ BILIBILI-HELPER
    
 | Name       | Value              |
 | ---------- | ------------------ |
-| BILI_JCT   | 从浏览器缓存中获取 |
-| DEDEUSERID | 从浏览器缓存中获取 |
-| SESSDATA   | 从浏览器缓存中获取 |
+| BILI_JCT   | 从Cookie中获取 |
+| DEDEUSERID | 从Cookie中获取 |
+| SESSDATA   | 从Cookie中获取 |
 
 ![图示](docs/IMG/20201013210000.png)
 
