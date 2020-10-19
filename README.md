@@ -68,8 +68,8 @@ BILIBILI-HELPER
 
 3. **点击项目 Seeting->Secrets->New Secrets 添加以下3个Secrets。** 
    
-| Name       | Value              |
-| ---------- | ------------------ |
+| Name       | Value          |
+| ---------- | -------------- |
 | BILI_JCT   | 从Cookie中获取 |
 | DEDEUSERID | 从Cookie中获取 |
 | SESSDATA   | 从Cookie中获取 |
