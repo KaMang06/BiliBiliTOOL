@@ -43,7 +43,7 @@ BILIBILI-HELPER
   - [一、Actions定时任务（推荐）](#一actions定时任务推荐)
     - [配置自定义功能](#配置自定义功能)
     - [查看运行日志](#查看运行日志)
-  - [二、使用Luinx crontab方式](#二使用luinx-crontab方式)
+  - [二、使用Luinx Crontab方式](#二使用luinx-crontab方式)
     - [步骤](#步骤)
     - [运行效果](#运行效果)
   - [三、使用Windows10](#三使用windows10)
@@ -52,7 +52,6 @@ BILIBILI-HELPER
   - [关于项目更新频率](#关于项目更新频率)
   - [使用Github Actions 自动同步源仓库代码](#使用github-actions-自动同步源仓库代码)
   - [手动拉取最新代码](#手动拉取最新代码)
-- [其他使用方式](#其他使用方式)
 - [API参考列表](#api参考列表)
 
 
@@ -70,17 +69,17 @@ BILIBILI-HELPER
    
 | Name       | Value          |
 | ---------- | -------------- |
-| BILI_JCT   | 从Cookie中获取 |
 | DEDEUSERID | 从Cookie中获取 |
 | SESSDATA   | 从Cookie中获取 |
+| BILI_JCT   | 从Cookie中获取 |
 
 ![图示](docs/IMG/20201013210000.png)
 
 4. **手动开GitHub Action服务**
    
-Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8点30会运行一次。
+Github Actions默认处于禁止状态，请手动开启Actions,并手动执行一次，验证是否可以正常工作。之后每天8点30会运行一次。
 
-![图示](docs/IMG/openActions.png)
+![图示](docs/IMG/workflow_dispatch.png)
 
 本工具的Actions自动构建配置了缓存，平均运行时间在`20s`左右。~~`Github Actions`每月的免费额度有2000分钟。所以本工具执行一个月（30次）的定时任务，大约会使用12分钟左右的免费额度，不到`0.6%`大家可以放心使用。公开仓库的Actions不计时 嘤嘤嘤~~
 
@@ -115,7 +114,7 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 ![图示](docs/IMG/debug2.png)
 
 
-## 二、使用Luinx crontab方式
+## 二、使用Luinx Crontab方式
 
 ### 步骤
 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，上传至Liunx服务器。
@@ -133,7 +132,7 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 # m h  dom mon dow   command
 0 0 1,15 * * /home/./acme.sh-master/acme.sh --renew-all >>/var/log/cron.log 2>&1 &
 0 0 1,15 * * nginx -s reload >>/var/log/cron.log 2>&1 &
-java -jar /home/BILIBILI-HELP.jar userId sessData biliJct 
+30 10 * * * java -jar /home/BILIBILI-HELP.jar DEDEUSERID SESSDATA BILI_JCT >>/var/log/cron.log 2>&1 &
 ```
 
 ### 运行效果  
@@ -142,9 +141,9 @@ java -jar /home/BILIBILI-HELP.jar userId sessData biliJct
 
 ## 三、使用Windows10
 ### 步骤
-1. 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本。在Jar包目录打开`Powershell` 需要装有Java运行环境
+1. 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本。解压，在解压后的目录打开`Powershell` 需要装有Java运行环境。
    
-2. 执行`java -jar /home/BILIBILI-HELP.jar userId sessData biliJct `
+2. 执行`java -jar /home/BILIBILI-HELP.jar DEDEUSERID SESSDATA BILI_JCT `
 
 ![图示](docs/IMG/powershell.png)
 
@@ -240,8 +239,6 @@ git push origin main
 ```
 5. 这样你就能快速的从我的仓库拉取最新的代码，并更新到你自己的仓库里了。自定义配置的同学，要注意`config.json` 不要被我的文件覆盖了。 
 
-# 其他使用方式
-也可以打成`jar`包部署到个人的服务器上，使用crontab执行定时任务，注意：`args`参数顺序为`userId`, `sessData`, `biliJct`。
 
 # API参考列表
 
