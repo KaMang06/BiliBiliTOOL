@@ -78,9 +78,9 @@ BILIBILI-HELPER
 
 4. **手动开GitHub Action服务**
    
-Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8点30会运行一次。
+Github Actions默认处于禁止状态，请手动开启Actions,并手动执行一次，验证是否可以正常工作。之后每天8点30会运行一次。
 
-![图示](docs/IMG/openActions.png)
+![图示](docs/IMG/workflow_dispatch.png)
 
 本工具的Actions自动构建配置了缓存，平均运行时间在`20s`左右。~~`Github Actions`每月的免费额度有2000分钟。所以本工具执行一个月（30次）的定时任务，大约会使用12分钟左右的免费额度，不到`0.6%`大家可以放心使用。公开仓库的Actions不计时 嘤嘤嘤~~
 
