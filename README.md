@@ -107,6 +107,8 @@ Github Actions默认处于禁止状态，请手动开启Actions. 之后每天8�
 
 *展开`Build With Maven`通过`DEBUG`标签快速过滤日志，查看运行状态*  
 
+[Actions运行日志详细查看教程](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/21)
+
 [日志示例](https://github.com/JunzhouLiu/BILIBILI-HELPER/runs/1256484004?check_suite_focus=true#step:4:5069)
 
 ![图示](docs/IMG/debug1.png)
