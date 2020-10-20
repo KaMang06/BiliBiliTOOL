@@ -43,7 +43,7 @@ BILIBILI-HELPER
   - [一、Actions定时任务（推荐）](#一actions定时任务推荐)
     - [配置自定义功能](#配置自定义功能)
     - [查看运行日志](#查看运行日志)
-  - [二、使用Luinx Crontab方式](#二使用luinx-crontab方式)
+  - [二、使用Linux Crontab方式](#二使用linux-crontab方式)
     - [步骤](#步骤)
     - [运行效果](#运行效果)
   - [三、使用Windows10](#三使用windows10)
@@ -52,6 +52,8 @@ BILIBILI-HELPER
   - [关于项目更新频率](#关于项目更新频率)
   - [使用Github Actions 自动同步源仓库代码](#使用github-actions-自动同步源仓库代码)
   - [手动拉取最新代码](#手动拉取最新代码)
+- [常见问题](#常见问题)
+  - [关于Action定时任务不执行的问题](#关于action定时任务不执行的问题)
 - [API参考列表](#api参考列表)
 
 
@@ -77,11 +79,20 @@ BILIBILI-HELPER
 
 4. **手动开GitHub Action服务**
    
-Github Actions默认处于禁止状态，请手动开启Actions，验证是否可以正常工作。之后每天18点30会运行一次。
+**Github Actions默认处于禁止状态，还大家请手动开启Actions，执行一次工作流，验证是否可以正常工作。**
 
 ![图示](docs/IMG/workflow_dispatch.png)
 
-本工具的Actions自动构建配置了缓存，平均运行时间在`20s`左右。~~`Github Actions`每月的免费额度有2000分钟。所以本工具执行一个月（30次）的定时任务，大约会使用12分钟左右的免费额度，不到`0.6%`大家可以放心使用。公开仓库的Actions不计时 嘤嘤嘤~~
+**部分朋友反映Fork仓库后，Actions无法定时执行，如果遇到这种情况，请修改`./github/trigger.json`文件,将`trigger`的值改为`1`即可。**
+
+```patch
+{
+- "trigger": 0
++ "trigger": 1
+}
+```
+
+本工具的Actions自动构建配置了缓存，平均运行时间在`20s`左右。
 
 *如果收到了GitHub Action的错误邮件，请检查Cookies是不是失效了，用户主动清除浏览器缓存，会导致`BILI_JCT`和`DEDEUSERID`失效*
 
@@ -239,6 +250,18 @@ git push origin main
 ```
 5. 这样你就能快速的从我的仓库拉取最新的代码，并更新到你自己的仓库里了。自定义配置的同学，要注意`config.json` 不要被我的文件覆盖了。 
 
+# 常见问题
+
+## 关于Action定时任务不执行的问题
+
+**部分朋友反映Fork仓库后，Actions无法定时执行，如果遇到这种情况，请修改`./github/trigger.json`文件,将`trigger`的值改为`1`即可。**
+
+```patch
+{
+- "trigger": 0
++ "trigger": 1
+}
+```
 
 # API参考列表
 
