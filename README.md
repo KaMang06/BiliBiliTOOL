@@ -22,9 +22,9 @@ BILIBILI-HELPER
 **仓库地址:[JunzhouLiu/BILIBILI-HELPER](https://github.com/JunzhouLiu/BILIBILI-HELPER)**
 
 ## 功能列表
-* [x] 每天上午8点30自动开始任务。
+* [x] 每天下午18点30自动开始任务。
 * [x] 哔哩哔哩漫画每日自动签到 。
-* [x] 每日自动从热门视频中随机观看1个视频，并分享 10经验 
+* [x] 每日自动从热门视频中随机观看1个视频，并分享。10经验 
 * [x] 每日从热门视频中选取5个进行智能投币 *【如果投币不能获得经验，默认不投币】*
 * [x] 投币支持下次一定啦，可自定义每日投币数量。*【如果检测到你已经投过币了，则不会投币】*
 * [x] 大会员月底使用快到期的B币券，给自己充电，一点也不会浪费哦，默认开启。*【可配置】*
@@ -77,7 +77,7 @@ BILIBILI-HELPER
 
 4. **手动开GitHub Action服务**
    
-Github Actions默认处于禁止状态，请手动开启Actions,并手动执行一次，验证是否可以正常工作。之后每天8点30会运行一次。
+Github Actions默认处于禁止状态，请手动开启Actions，验证是否可以正常工作。之后每天18点30会运行一次。
 
 ![图示](docs/IMG/workflow_dispatch.png)
 
@@ -114,7 +114,7 @@ Github Actions默认处于禁止状态，请手动开启Actions,并手动执行�
 ![图示](docs/IMG/debug2.png)
 
 
-## 二、使用Luinx Crontab方式
+## 二、使用Linux Crontab方式
 
 ### 步骤
 点击[BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，上传至Liunx服务器。
