@@ -172,15 +172,15 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 ![图示](docs/IMG/powershell.png)
 
 
-# 订阅执行结果
-## 步骤
+# 微信订阅通知
+## 订阅执行结果
 
 1. 前往[sc.ftqq.com](http://sc.ftqq.com/3.version)创建账号，并且生成一个Key。将其增加到Github Secrets中，变量名为`SERVERPUSHKEY`，值为你创建账号获得的key,可在[查看Key](http://sc.ftqq.com/?c=code),查看你的key。
-2. 绑定微信账号，开启微信推送。地址[绑定微信](http://sc.ftqq.com/?c=wechat&a=bind)
-3. 
+2. 绑定微信账号，开启微信推送。[绑定微信](http://sc.ftqq.com/?c=wechat&a=bind)
+
 ![图示](docs/IMG/serverpush.png)
 
-# 本项目版本更新
+## 订阅版本更新
 
 微信扫描以下二维码订阅版本更新通知
 
