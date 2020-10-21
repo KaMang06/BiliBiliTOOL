@@ -180,10 +180,10 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 
 ![图示](docs/IMG/serverpush.png)
 3. 推送效果展示
-<figure class="half">
+
 ![图示](docs/IMG/serverpush1.jpg)
 ![图示](docs/IMG/serverpush2.jpg)
-</figure>
+
 
 ## 订阅版本更新
 
