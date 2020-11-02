@@ -75,8 +75,8 @@ BILIBILI-HELPER
 
 3. **点击项目 Settings -> Secrets -> New Secrets 添加以下 3 个 Secrets。**
 
-| Name       | Value          |
-| ---------- | -------------- |
+| Name       | Value            |
+| ---------- | ---------------- |
 | DEDEUSERID | 从 Cookie 中获取 |
 | SESSDATA   | 从 Cookie 中获取 |
 | BILI_JCT   | 从 Cookie 中获取 |
@@ -117,12 +117,12 @@ BILIBILI-HELPER
 
 参数示意
 
-| Key                | Value         | 说明                                                     |
-| ------------------ | ------------- | -------------------------------------------------------- |
+| Key                | Value         | 说明                                                      |
+| ------------------ | ------------- | --------------------------------------------------------- |
 | numberOfCoins      | [0,5]         | 每日投币数量,默认 5                                       |
-| selectLike         | [0,1]         | 投币时是否点赞，默认 0, 0：否 1：是                         |
-| ~~watchAndShare~~  | ~~[0,1]~~     | ~~观看时是否分享~~                                       |
-| monthEndAutoCharge | [false,true]  | 年度大会员月底是否用 B币券 给自己充电，默认 `true`          |
+| selectLike         | [0,1]         | 投币时是否点赞，默认 0, 0：否 1：是                       |
+| ~~watchAndShare~~  | ~~[0,1]~~     | ~~观看时是否分享~~                                        |
+| monthEndAutoCharge | [false,true]  | 年度大会员月底是否用 B币券 给自己充电，默认 `true`        |
 | devicePlatform     | [ios,android] | 手机端漫画签到时的平台，建议选择你设备的平台 ，默认 `ios` |
 
 *投币数量代码做了处理，如果本日投币不能获得经验了，则不会投币，每天只投能获得经验的硬币。假设你设置每日投币 3 个，早上 7 点你自己投了 2 个硬币，则十点半时，程序只会投 1 个）*
@@ -185,8 +185,7 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 2. 绑定微信账号，开启微信推送。[绑定微信](http://sc.ftqq.com/?c=wechat&a=bind)
 ![图示](docs/IMG/serverpush.png)
 3. 推送效果展示
-![图示](docs/IMG/serverpush1.jpg)
-![图示](docs/IMG/serverpush2.jpg)
+![图示](docs/IMG/wechatMsgPush.png)
 
 ## 订阅版本更新
 
