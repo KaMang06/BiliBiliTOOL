@@ -189,9 +189,9 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 
 ## 订阅版本更新
 
-微信扫描以下二维码订阅版本更新通知
+微信扫描以下二维码进入用户反馈群（通道推送已移除）
 
-![图示](docs/IMG/suborcode.png)
+![图示](docs/IMG/wechatGroup.jpg)
 
 # 快速更新
 
