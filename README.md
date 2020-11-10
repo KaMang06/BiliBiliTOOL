@@ -59,6 +59,7 @@ BILIBILI-HELPER
   - [使用 Github Actions 自动同步源仓库代码](#使用-github-actions-自动同步源仓库代码)
   - [手动拉取最新代码](#手动拉取最新代码)
 - [常见问题解答](#常见问题解答)
+- [致谢](#致谢)
 - [API 参考列表](#api-参考列表)
 
 # 使用说明
@@ -301,6 +302,10 @@ git push origin main
 
 请参阅[常见问题解答](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/4)
 
+# 致谢
+感谢 JetBrains 对本项目的支持。
+
+[![JetBrains](docs/IMG/jetbrains.svg)](https://www.jetbrains.com/?from=BILIBILI-HELPER)
 
 # API 参考列表
 
