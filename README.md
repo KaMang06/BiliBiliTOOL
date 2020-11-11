@@ -162,7 +162,9 @@ root@iZuf642f8w148fwdcpq169Z:~# crontab -l
 0 0 1,15 * * nginx -s reload >>/var/log/cron.log 2>&1 &
 ```
 
-3. `corntab -e`，编辑 crontab 任务，退出保存即可。后面跟的三个参数为哔哩哔哩 Cookies 参数。
+3. `corntab -e`，编辑 crontab 任务，退出保存即可。后面跟的三个参数为哔哩哔哩 Cookies 参数。顺序为 `DEDEUSERID` `SESSDATA` `BILI_JCT`（如需配置 server 酱，则 server 酱的 key 作为第四个参数配置即可）
+
+*如果Cookies参数中包含特殊字符，例如`%`请使用`\`转义*
 
 ```bash
 # m h  dom mon dow   command
