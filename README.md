@@ -59,6 +59,7 @@ BILIBILI-HELPER
   - [使用 Github Actions 自动同步源仓库代码](#使用-github-actions-自动同步源仓库代码)
   - [手动拉取最新代码](#手动拉取最新代码)
 - [常见问题解答](#常见问题解答)
+- [捐赠/赞赏](#捐赠赞赏)
 - [致谢](#致谢)
 - [API 参考列表](#api-参考列表)
 
@@ -196,95 +197,23 @@ config.json
 
 ## 使用 Github Actions 自动同步源仓库代码
 
-该方案来自 `@happy888888` `#PR6` ，由于源仓库 `config.json` 文件的更改会覆盖用户自己的 `config.json` 配置文件，所以暂时没有合并到 `main` 分支。
 
-**使用自定义功能的朋友慎用该方法，建议使用手动拉取的方式，手动解决代码冲突**
-
-在 `./github/workflows` 目录下创建 `auto_merge.yml` 文件，内容如下
-
-```yml
-name: auto_merge
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: 0 2 * * fri
-    # cron表达式,每周五10点执行一次，UTC时间，使用北京时间请+8可按照需求自定义。  
-
-jobs:
-  merge:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        ref: main
-        fetch-depth: 0
-        lfs: true
-
-    - name: Set git identity
-      run : |
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "github-actions[bot]"
-    - name: Load upstream commits
-      run: |
-        git update-index --assume-unchanged ./src/main/resources/config.json
-        git pull https://github.com/JunzhouLiu/BILIBILI-HELPER.git --log --no-commit
-    - name: Apply commit changes
-      run: |
-        if [ -f ./.git/MERGE_MSG ]; then
-        mkdir ./tmp && cp ./.git/MERGE_MSG ./tmp/message
-        sed -i "1c [bot] AutoMerging: merge all upstream's changes:" ./tmp/message
-        sed -i '/^\#.*/d' ./tmp/message
-        git commit --file="./tmp/message"
-        else
-        echo "There is no merge commits."
-        fi
-    - name: Push Commits
-      env:
-        DOWNSTREAM_BRANCH: main
-        TZ: Asia/Shanghai
-      run: git push origin $DOWNSTREAM_BRANCH
-```
+参阅[Issue8 使用GitHub Actions任务自动同步源仓库代码](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/8)
 
 ## 手动拉取最新代码
 
-1. 通过 `git remote -v` 查看是否有源头仓库的别名和地址。
-
-例如这里 `origin` 就是你自己的仓库，`upstream` 是你 `fork` 的源头仓库。
-
-```bash
-$ git remote -v
-origin  https://github.com/JunzhouLiu/cxmooc-tools.git (fetch)
-origin  https://github.com/JunzhouLiu/cxmooc-tools.git (push)
-upstream        https://github.com/CodFrm/cxmooc-tools.git (fetch)
-upstream        https://github.com/CodFrm/cxmooc-tools.git (push)
-
-```
-
-2. fork 仓库后，将你的仓库拉到本地，如果没有源头仓库，则添加源头仓库
-
-```bash
-git remote add upstream https://github.com/JunzhouLiu/BILIBILI-HELPER.git
-```
-
-3. 更新上游仓库 main 分支的代码（pull 操作实际上是 `fetch+merge`）
-
-```bash
-git pull upstream main
-```
-
-4. 将从源头仓库更新后的代码推送到你自己的 GitHub 仓库
-
-```bash
-git push origin main
-```
-
-5. 这样你就能快速的从我的仓库拉取最新的代码，并更新到你自己的仓库里了。自定义配置的同学，要注意 `config.json` 不要被我的文件覆盖了。
+参阅[Issues4 手动拉取最新代码](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/4)
 
 # 常见问题解答
 
 请参阅[常见问题解答](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/4)
+
+# 捐赠/赞赏
+如果您觉得该项目帮助到了您，并且您乐意给予开发者一些有限支持，可通过微信、支付宝进行捐赠赞赏。
+
+如果您对我进行了赞赏，我将视其为不构成雇佣、购买关系的赞赏，稍后我将会维护一个捐赠、赞赏页面，我会视情况拿出一部分对公益午餐计划进行支持。
+
+![Reward](docs/IMG/reward.png)
 
 # 致谢
 感谢 JetBrains 对本项目的支持。
