@@ -15,7 +15,7 @@ BILIBILI-HELPER
 
 # 工具简介
 
-这是一个利用 Linux Crontab , GitHub Action 等实现哔哩哔哩（Bilibili）每日自动投币，点赞，分享视频，直播签到，银瓜子兑换硬币，漫画每日签到，简单配置即可每日轻松获取 65 经验值，快来和我一起成为 Lv6 吧~~~~
+这是一个利用 Linux Crontab , GitHub Action 等方式实现哔哩哔哩（Bilibili）每日自动投币，点赞，分享视频，直播签到，银瓜子兑换硬币，漫画每日签到，简单配置即可每日轻松获取 65 经验值，快来和我一起成为 Lv6 吧~~~~
 
 **如果觉得好用，顺手点个 Star 吧 ❤**
 
@@ -34,6 +34,7 @@ BILIBILI-HELPER
 * [x] 通过server酱推送执行结果到微信。
 * [x] Linux用户支持自定义配置了。
 * [x] 投币策略更新可配置投币喜好。*【可配置优先给关注的up投币】*
+  
 ......
 
 [点击快速开始使用](#快速开始使用)
@@ -44,7 +45,7 @@ BILIBILI-HELPER
   - [功能列表](#功能列表)
 - [目录](#目录)
 - [使用说明](#使用说明)
-  - [一、Actions 定时任务](#一actions-定时任务)
+  - [一、Actions 方式](#一actions-方式)
     - [配置自定义功能](#配置自定义功能)
     - [查看运行日志](#查看运行日志)
   - [二、使用 Linux Crontab 方式](#二使用-linux-crontab-方式)
@@ -65,7 +66,7 @@ BILIBILI-HELPER
 
 # 使用说明
 
-## 一、Actions 定时任务
+## 一、Actions 方式
 
 1. **Fork 本项目**
 2. **获取 Bilibili Cookies**
@@ -112,6 +113,10 @@ BILIBILI-HELPER
 本工具的 Actions 自动构建配置了缓存，平均运行时间在 20s 左右。
 
 *如果收到了 GitHub Action 的错误邮件，请检查 Cookies 是不是失效了，用户主动清除浏览器缓存，会导致 `BILI_JCT` 和 `DEDEUSERID` 失效*
+
+**请各位使用 Actions 时务必遵守Github条款。不要滥用Actions服务。**
+
+**Please be sure to abide by the Github terms when using Actions. Do not abuse the Actions service.**
 
 ### 配置自定义功能
 
