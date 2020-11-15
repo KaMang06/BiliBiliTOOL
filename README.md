@@ -170,6 +170,29 @@ BILIBILI-HELPER.jar
 config.json
 ```
 
+除此之外，也可以通过点击 [BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases)，下载已发布的版本，解压后将jar包手动上传到Linux服务器，使用crontab完成定时执行。
+
+**命令格式解释：**
+
+`30 10 * * * java -jar /home/BILIBILI-HELP.jar DEDEUSERID SESSDATA BILI_JCT SCKEY>/var/log/cron.log &`
+
+| args                               | 说明                                                                                                       |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 30 10 * * *                        | cron 定时时间                                                                                              |
+| java -jar                          | 执行jar包                                                                                                  |
+| /home/BILIBILI-HELP.jar            | jar包路径                                                                                                  |
+| DEDEUSERID SESSDATA BILI_JCT SCKEY | 传入参数的顺序，参数含义请见上文,SCKEY可为空（用于server酱推送日志，等同actions任务配置中的SERVERPUSHKEY） |
+| >/var/log/cron.log &               | 日志写入的路径                                                                                             |
+
+
+**命令示例：**
+
+```shell
+# *如果Cookies参数中包含特殊字符，例如`%`请使用`\`转义*
+# m h  dom mon dow   command
+30 10 * * * java -jar /home/BILIBILI-HELP.jar DEDEUSERID SESSDATA BILI_JCT >/var/log/cron.log &
+```
+
 ### 运行效果
 
 ![图示](docs/IMG/liunxImg.png)
