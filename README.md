@@ -59,6 +59,7 @@ BILIBILI-HELPER
     - [运行效果](#运行效果)
   - [三、使用 Windows10](#三使用-windows10)
     - [步骤](#步骤-1)
+  - [四、使用 Docker](#四使用-docker)
 - [微信订阅通知](#微信订阅通知)
   - [订阅执行结果](#订阅执行结果)
   - [订阅版本更新](#订阅版本更新)
@@ -69,6 +70,7 @@ BILIBILI-HELPER
 - [捐赠/赞赏](#捐赠赞赏)
 - [致谢](#致谢)
 - [API 参考列表](#api-参考列表)
+- [基于本项目的衍生项目](#基于本项目的衍生项目)
 
 # 使用说明
 
@@ -219,6 +221,14 @@ config.json
 
 ![图示](docs/IMG/powershell.png)
 
+## 四、使用 Docker
+
+请自行参阅 [Issues/75#issuecomment-731705657](https://github.com/JunzhouLiu/BILIBILI-HELPER/issues/75#issuecomment-731705657) 和[基于本项目的衍生项目](#基于本项目的衍生项目) 。
+
+- **基于本项目的docker封装项目：[SuperNG6/docker-bilbili-helper](https://github.com/SuperNG6/docker-bilbili-helper)**
+
+- **基于本项目的docker镜像：[superng6/bilbili-helper](https://hub.docker.com/r/superng6/bilbili-helper)**
+
 # 微信订阅通知
 
 ## 订阅执行结果
@@ -266,3 +276,9 @@ config.json
 
 - [SocialSisterYi/bilibili-API-collect](https://github.com/SocialSisterYi/bilibili-API-collect)
 - [happy888888/BiliExp](https://github.com/happy888888/BiliExp)
+
+# 基于本项目的衍生项目
+
+- **基于本项目的docker封装项目：[SuperNG6/docker-bilbili-helper](https://github.com/SuperNG6/docker-bilbili-helper)**
+
+- **基于本项目的docker镜像：[superng6/bilbili-helper](https://hub.docker.com/r/superng6/bilbili-helper)**
