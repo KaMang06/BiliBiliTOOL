@@ -62,7 +62,6 @@ BILIBILI-HELPER
   - [四、使用 Docker](#四使用-docker)
 - [微信订阅通知](#微信订阅通知)
   - [订阅执行结果](#订阅执行结果)
-  - [订阅版本更新](#订阅版本更新)
 - [快速更新](#快速更新)
   - [使用 Github Actions 自动同步源仓库代码](#使用-github-actions-自动同步源仓库代码)
   - [手动拉取最新代码](#手动拉取最新代码)
@@ -239,11 +238,6 @@ config.json
 4. 推送效果展示
 ![图示](docs/IMG/wechatMsgPush.png)
 
-## 订阅版本更新
-
-微信扫描以下二维码进入用户反馈群（通道推送已移除）
-
-![图示](docs/IMG/wechatGroup.jpg)
 
 # 快速更新
 
