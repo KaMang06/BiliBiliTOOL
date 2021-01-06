@@ -142,20 +142,27 @@ wget https://raw.githubusercontent.com/JunzhouLiu/BILIBILI-HELPER/main/setup.sh 
 
 **ps：注意，如果使用自定义配置，请将`config.json`和jar包放置在同一目录(使用setup.sh安装则需要将`config.json`放置到`{HOME}/BILIBILI-HELPER`)，`v1.2.2`之后的版本`release`中都会携带一份`config.json`。**
 
-2. 除此之外，也可以通过点击 [BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases/latest)，下载已发布的版本，解压后将jar包手动上传到Linux服务器，使用crontab完成定时执行。
+2. 除此之外，也可以通过点击 [BILIBILI-HELPER/release](https://github.com/JunzhouLiu/BILIBILI-HELPER/releases/latest)，下载已发布的版本，解压后将jar包手动上传到Linux服务器，使用crontab完成定时执行，如果使用`crontab`请记得`source /etc/profile`和`source ~/.bashrc`,建议直接使用仓库提供的[`start.sh`](https://github.com/JunzhouLiu/BILIBILI-HELPER/blob/main/start.sh)脚本,注意修改脚本的jar包路径和cookies参数。
 
 
-**命令格式解释：**
+**crontab命令示例**
 
-`30 10 * * * java -jar /home/BILIBILI-HELP.jar DEDEUSERID SESSDATA BILI_JCT SCKEY>/var/log/cron.log &`
+`30 10 * * * sh /home/start.sh` 
 
-| args                               | 说明                                                                                                       |
-| ---------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 30 10 * * *                        | cron 定时时间                                                                                              |
-| java -jar                          | 执行jar包                                                                                                  |
-| /home/BILIBILI-HELP.jar            | jar包路径                                                                                                  |
-| DEDEUSERID SESSDATA BILI_JCT SCKEY | 传入参数的顺序，参数含义请见上文,SCKEY可为空（用于server酱推送日志，等同actions任务配置中的SERVERPUSHKEY） |
-| >/var/log/cron.log &               | 日志写入的路径                                                                                             |
+| args              | 说明               |
+| ----------------- | ------------------ |
+| 30 10 * * *       | `crontab` 定时时间 |
+| sh /home/start.sh | `start.sh`的路径   |
+
+```shell
+#!/bin/bash
+source /etc/profile 
+source ~/.bashrc 
+source ~/.zshrc #其他终端请自行引入环境变量
+echo $PATH
+java -jar /home/BILIBILI-HELPER.jar DEDEUSERID SESSDATA BILI_JCT SCKEY >> /var/log/bilibili-help.log
+# 注意将jar包路径替换为实际路径。将参数修改该你自己的参数，cookies中含有等特殊字符需要转义。
+```
 
 
 **命令示例：**
